@@ -62,6 +62,12 @@ class LinkedList {
         return true;
     }
 
+    private check_index_out_range( index: number ): void {
+        if ( index > this.size() ) {
+            throw new RangeError( 'Index out of linked list range.' );
+        }
+    }
+
     public find( key: unknown ): Data {
         let current: Data = this.head;
         
@@ -77,6 +83,8 @@ class LinkedList {
     }
 
     public search( index: number ): Data {
+        this.check_index_out_range( index );
+
         if ( index === 0 ) {
             return this.head;
         } else if ( index > 0 ) {
@@ -108,6 +116,8 @@ class LinkedList {
     }
 
     public insert( data: unknown, index: number ): void {
+        this.check_index_out_range( index );
+
         if ( this.unique && !this.is_unique( data ) ) {
             throw new ValueError( 'Value should be unique.' );
         }
@@ -135,6 +145,8 @@ class LinkedList {
     }
 
     public remove( index: number ): Data {
+        this.check_index_out_range( index );
+
         if ( index === 0 ) {
             return this.unhead(); 
         } else if ( index > 0 ) {
