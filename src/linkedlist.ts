@@ -130,7 +130,31 @@ class LinkedList {
         }
     }
 
-    public remove( index: number ): Data {}
+    public remove( index: number ): Data {
+        if ( index === 0 ) {
+            const current: Data = this.head;
+            this.head = current!.next_node;
+
+            return current;
+        } else if ( index > 0 ) {
+            let current: Data = this.head;
+            let position: number = 1;
+
+            while ( current !== null ) {
+                current = current.next_node;
+                position--;
+            }
+
+            const prev_node: Data = current;
+            const deleted: Data = current!.next_node;
+
+            prev_node!.next_node = deleted!.next_node;
+
+            return deleted;
+        } else {
+            return null;
+        }
+    }
 
     public delete(): Data {}
 
