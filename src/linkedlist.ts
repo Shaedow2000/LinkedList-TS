@@ -33,7 +33,17 @@ class LinkedList {
         return this.head === null;
     }
 
-    public size(): number {}
+    public size(): number {
+        let current: Data = this.head;
+        let count: number = 0;
+
+        while ( current !== null ) {
+            count++;
+            current = current.next_node;
+        }
+
+        return count;
+    }
 
     public is_unique(): boolean {}
 
