@@ -177,7 +177,13 @@ class LinkedList {
         return current;
     }
 
-    public unhead(): Data {}
+    public unhead(): Data {
+        const current: Data = this.head;
+
+        this.head = current!.next_node;
+        
+        return current;
+    }
 
     public untail(): Data {}
 }
