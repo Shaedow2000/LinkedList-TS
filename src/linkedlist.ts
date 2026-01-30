@@ -138,9 +138,9 @@ class LinkedList {
             return current;
         } else if ( index > 0 ) {
             let current: Data = this.head;
-            let position: number = 1;
+            let position: number = index;
 
-            while ( current !== null ) {
+            while ( current !== null && position > 1 ) {
                 current = current.next_node;
                 position--;
             }
@@ -156,7 +156,26 @@ class LinkedList {
         }
     }
 
-    public delete(): Data {}
+    public delete( key: unknown ): Data {
+        let current: Data = this.head;
+        let previous: Data = null;
+        let found: boolean = false;
+
+        while ( current !== null && !found ) {
+            if ( key === current.data && current === this.head ) {
+                this.head = current.next_node;
+                found = true;
+            } else if ( key === current.data ) {
+                previous!.next_node = current.next_node;
+                found = true;
+            } else {
+                previous = current;
+                current = current.next_node;
+            }
+        }
+
+        return current;
+    }
 
     public unhead(): Data {}
 
