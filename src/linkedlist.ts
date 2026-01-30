@@ -2,7 +2,13 @@ import { Node } from "./node.ts";
 import { Data } from "./types.ts";
 
 class LinkedList {
-    constructor() {}
+    public head: Data;
+    private unique: boolean;
+
+    constructor( unique: boolean ) {
+        this.head = null
+        this.unique = unique;
+    }
 
     public toString(): string {}
 
