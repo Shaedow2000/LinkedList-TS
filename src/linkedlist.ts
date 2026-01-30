@@ -10,7 +10,24 @@ class LinkedList {
         this.unique = unique;
     }
 
-    public toString(): string {}
+    public toString(): string {
+        let current: Data = this.head;
+        const nodes: string[] = [];
+
+        while ( current !== null ) {
+            if ( current !== null && current === this.head ) {
+                nodes.push( `[ HEAD: ${ current.data } ]` );
+            } else if ( current.next_node === null ) {
+                nodes.push( `[ TAIL: ${ current.data } ]` );
+            } else {
+                nodes.push( `[ ${ current.data } ]` );
+            }
+
+            current = current.next_node;
+        }
+
+        return nodes.length !== 0 ? nodes.join( '-> ' ) : '[ No Data ]';
+    }
 
     public is_empty(): boolean {
         return this.head === null;
