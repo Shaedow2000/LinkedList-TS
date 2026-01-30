@@ -1,5 +1,6 @@
 import { Node } from "./node.ts";
-import { Data } from "./types.ts";
+import type { Data } from "./types.ts";
+import { ValueError } from "./types.ts";
 
 class LinkedList {
     public head: Data;
@@ -94,6 +95,10 @@ class LinkedList {
     }
 
     public add( data: unknown ): void {
+        if ( this.unique && !this.is_unique( data ) ) {
+            throw new ValueError( 'Value should be unique.' );
+        }
+
         const new_node: Node = new Node( data );
         
         new_node.next_node = this.head;
