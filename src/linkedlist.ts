@@ -108,6 +108,10 @@ class LinkedList {
     }
 
     public insert( data: unknown, index: number ): void {
+        if ( this.unique && !this.is_unique( data ) ) {
+            throw new ValueError( 'Value should be unique.' );
+        }
+
         if ( index === 0 ) {
             this.add( data );
         } else if ( index > 0 ) {
