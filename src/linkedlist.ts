@@ -45,7 +45,21 @@ class LinkedList {
         return count;
     }
 
-    public is_unique(): boolean {}
+    private is_unique( key: unknown ): boolean {
+        let current: Data = this.head;
+        let position: number = 1;
+
+        while ( current !== null && position <= this.size() ) {
+            if ( current !== null && key === current.data ) {
+                return false;
+            }
+
+            position++;
+            current = current.next_node;
+        }
+
+        return true;
+    }
 
     public find(): Data {}
 
