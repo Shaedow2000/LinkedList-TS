@@ -75,7 +75,23 @@ class LinkedList {
         return null;
     }
 
-    public search(): Data {}
+    public search( index: number ): Data {
+        if ( index === 0 ) {
+            return this.head;
+        } else if ( index > 0 ) {
+            let current: Data = this.head;
+            let position: number = index;
+
+            while ( current !== null && position > 1 ) {
+                current = current.next_node;
+                position--;
+            }
+
+            return current;
+        } else {
+            return null
+        }
+    }
 
     public add(): void {}
 
