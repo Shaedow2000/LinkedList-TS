@@ -132,10 +132,7 @@ class LinkedList {
 
     public remove( index: number ): Data {
         if ( index === 0 ) {
-            const current: Data = this.head;
-            this.head = current!.next_node;
-
-            return current;
+            return this.unhead(); 
         } else if ( index > 0 ) {
             let current: Data = this.head;
             let position: number = index;
