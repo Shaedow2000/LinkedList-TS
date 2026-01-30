@@ -62,7 +62,7 @@ class LinkedList {
         return true;
     }
 
-    private check_index_out_range( index: number ): void {
+    private check_index( index: number ): void {
         if ( index > this.size() ) {
             throw new RangeError( 'Index out of linked list range.' );
         }
@@ -83,7 +83,7 @@ class LinkedList {
     }
 
     public search( index: number ): Data {
-        this.check_index_out_range( index );
+        this.check_index( index );
 
         if ( index === 0 ) {
             return this.head;
@@ -116,7 +116,7 @@ class LinkedList {
     }
 
     public insert( data: unknown, index: number ): void {
-        this.check_index_out_range( index );
+        this.check_index( index );
 
         if ( this.unique && !this.is_unique( data ) ) {
             throw new ValueError( 'Value should be unique.' );
@@ -145,7 +145,7 @@ class LinkedList {
     }
 
     public remove( index: number ): Data {
-        this.check_index_out_range( index );
+        this.check_index( index );
 
         if ( index === 0 ) {
             return this.unhead(); 
