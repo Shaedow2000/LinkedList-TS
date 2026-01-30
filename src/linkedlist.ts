@@ -93,7 +93,14 @@ class LinkedList {
         }
     }
 
-    public add(): void {}
+    public add( data: unknown ): void {
+        const new_node: Node = new Node( data );
+        
+        new_node.next_node = this.head;
+        this.head = new_node;
+
+        return
+    }
 
     public insert(): void {}
 
