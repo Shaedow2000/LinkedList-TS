@@ -93,7 +93,7 @@ class LinkedList {
             let current: Data = this.head;
             let position: number = index;
 
-            while ( current !== null && position > 1 ) {
+            while ( current !== null && position > 0 ) {
                 current = current.next_node;
                 position--;
             }
