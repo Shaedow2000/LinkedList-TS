@@ -1,0 +1,17 @@
+{
+  "name": "LinkedList-TS",
+  "version": "1.0.0",
+  "files": [
+    "node.ts",
+    "linkedlist.ts",
+    "types.ts"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9"
+  },
+  "description": "Linked list data structure implementation with ts. Source code for package.",
+  "keywords": ["typescript", "linkedlist", "ts", "src", "source", "source-code", "data", "structure", "data-structure"],
+  "author": "Shaedow2000",
+  "license": "No license"
+}
+

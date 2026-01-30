@@ -1,0 +1,17 @@
+{
+  "name": "LinkedList",
+  "version": "1.0.0",
+  "files": [
+    "linkedlist.js",
+    "linkedlist.js.map",
+    "node.js",
+    "node.js.map",
+    "types.js",
+    "types.js.map"
+  ],
+  "description": "Linked list data structure implemented with JS",
+  "keywords": ["javascript", "linkedlist", "js-module", "module", "js", "data", "structure", "data-structure"],
+  "author": "Shaedow2000",
+  "license": "No license"
+}
+
