@@ -193,6 +193,10 @@ class LinkedList {
     }
 
     public unhead(): Data {
+        if ( this.is_empty() ) {
+            return null;
+        }
+
         const current: Data = this.head;
 
         this.head = current!.next_node;
