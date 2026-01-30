@@ -12,7 +12,9 @@ class LinkedList {
 
     public toString(): string {}
 
-    public is_empty(): boolean {}
+    public is_empty(): boolean {
+        return this.head === null;
+    }
 
     public size(): number {}
 
