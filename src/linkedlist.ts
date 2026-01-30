@@ -104,12 +104,33 @@ class LinkedList {
         new_node.next_node = this.head;
         this.head = new_node;
 
-        return
+        return;
     }
 
-    public insert(): void {}
+    public insert( data: unknown, index: number ): void {
+        if ( index === 0 ) {
+            this.add( data );
+        } else if ( index > 0 ) {
+            const new_node: Node = new Node( data );
+            let current: Data = this.head;
+            let position: number = index;
 
-    public remove(): Data {}
+            while ( current !== null && position > 1 ) {
+                current = current.next_node;
+                position--;
+            }
+
+            const prev_node: Data = current;
+            const next_node: Data = current!.next_node;
+
+            prev_node!.next_node = new_node;
+            new_node.next_node = next_node;
+
+            return;
+        }
+    }
+
+    public remove( index: number ): Data {}
 
     public delete(): Data {}
 
