@@ -61,7 +61,19 @@ class LinkedList {
         return true;
     }
 
-    public find(): Data {}
+    public find( key: unknown ): Data {
+        let current: Data = this.head;
+        
+        while ( current !== null ) {
+            if ( current !== null && key === current.data ) {
+                return current
+            }
+
+            current = current.next_node;
+        }
+
+        return null;
+    }
 
     public search(): Data {}
 
