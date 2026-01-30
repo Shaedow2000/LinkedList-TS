@@ -185,7 +185,21 @@ class LinkedList {
         return current;
     }
 
-    public untail(): Data {}
+    public untail(): Data {
+        let current: Data = this.head;
+        let previous: Data = null;
+
+        while ( current !== null ) {
+            if ( current.next_node === null ) {
+                previous!.next_node = null;                
+            }
+
+            previous = current;
+            current = current.next_node;
+        }
+
+        return current
+    }
 }
 
 export { LinkedList }
