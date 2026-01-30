@@ -65,6 +65,8 @@ class LinkedList {
     private check_index( index: number ): void {
         if ( index > this.size() ) {
             throw new RangeError( 'Index out of linked list range.' );
+        } else if ( index < 0 ) {
+            throw new RangeError( 'Negative indexes are not allowed in linked lists.' );
         }
     }
 
